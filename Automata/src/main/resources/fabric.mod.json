@@ -19,8 +19,11 @@
     "main": [
       {
         "adapter": "kotlin",
-        "value": "com.mod_author.mod_id.ModName"
+        "value": "com.twof.automata.Automata"
       }
+    ],
+    "client": [
+      "com.twof.automata.EntityTestingClient"
     ]
   },
   "mixins": [

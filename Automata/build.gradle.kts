@@ -23,6 +23,9 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api", "fabric-api", fabricVersion)
     val fabricKotlinVersion: String by project
     modImplementation("net.fabricmc", "fabric-language-kotlin", fabricKotlinVersion)
+
+    implementation("io.ktor:ktor-server-core:2.1.0")
+    implementation("io.ktor:ktor-server-netty:2.1.0")
 }
 tasks {
     val javaVersion = JavaVersion.VERSION_17
