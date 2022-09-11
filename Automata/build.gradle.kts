@@ -2,6 +2,7 @@ plugins {
     id("fabric-loom")
     val kotlinVersion: String by System.getProperties()
     kotlin("jvm").version(kotlinVersion)
+    kotlin("plugin.serialization").version("1.7.10")
 }
 base {
     val archivesBaseName: String by project
@@ -11,7 +12,9 @@ val modVersion: String by project
 version = modVersion
 val mavenGroup: String by project
 group = mavenGroup
-repositories {}
+repositories {
+    mavenCentral()
+}
 dependencies {
     val minecraftVersion: String by project
     minecraft("com.mojang", "minecraft", minecraftVersion)
@@ -26,6 +29,9 @@ dependencies {
 
     implementation("io.ktor:ktor-server-core:2.1.0")
     implementation("io.ktor:ktor-server-netty:2.1.0")
+    implementation("io.ktor:ktor-server-websockets:2.1.0")
+
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.1.0")
 }
 tasks {
     val javaVersion = JavaVersion.VERSION_17
